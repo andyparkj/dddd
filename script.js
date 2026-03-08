@@ -5,9 +5,8 @@ const observerOptions = {
 };
 
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry, index) => {
+  entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      // Stagger animation for sibling elements
       const siblings = entry.target.parentElement.querySelectorAll('.animate-on-scroll');
       const siblingIndex = Array.from(siblings).indexOf(entry.target);
       const delay = siblingIndex * 100;
@@ -47,7 +46,7 @@ if (mobileMenuBtn) {
 
     if (isOpen) {
       navLinks.style.display = '';
-      navActions.style.display = '';
+      if (navActions) navActions.style.display = '';
       mobileMenuBtn.classList.remove('active');
     } else {
       navLinks.style.cssText = `
@@ -63,64 +62,42 @@ if (mobileMenuBtn) {
         gap: 16px;
         border-bottom: 1px solid var(--border);
       `;
-      navActions.style.cssText = `
-        display: flex;
-        position: absolute;
-        top: calc(100% + ${navLinks.offsetHeight}px);
-        left: 0;
-        right: 0;
-        background: rgba(9, 9, 11, 0.95);
-        backdrop-filter: blur(20px);
-        padding: 0 24px 24px;
-        gap: 16px;
-        border-bottom: 1px solid var(--border);
-      `;
+      if (navActions) {
+        navActions.style.cssText = `
+          display: flex;
+          position: absolute;
+          top: calc(100% + ${navLinks.offsetHeight}px);
+          left: 0;
+          right: 0;
+          background: rgba(9, 9, 11, 0.95);
+          backdrop-filter: blur(20px);
+          padding: 0 24px 24px;
+          gap: 16px;
+          border-bottom: 1px solid var(--border);
+        `;
+      }
       mobileMenuBtn.classList.add('active');
     }
   });
 }
 
-// ===== Pricing Toggle =====
-const toggleSwitch = document.querySelector('.toggle-switch');
-const toggleLabels = document.querySelectorAll('.toggle-label');
-const prices = document.querySelectorAll('.price');
+// ===== FAQ Accordion =====
+document.querySelectorAll('.faq-question').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
 
-if (toggleSwitch) {
-  toggleSwitch.addEventListener('click', () => {
-    const currentPeriod = toggleSwitch.dataset.active;
-    const newPeriod = currentPeriod === 'monthly' ? 'yearly' : 'monthly';
-
-    toggleSwitch.dataset.active = newPeriod;
-
-    toggleLabels.forEach((label) => {
-      label.classList.toggle('active', label.dataset.period === newPeriod);
+    // Close all others
+    document.querySelectorAll('.faq-item.open').forEach((openItem) => {
+      openItem.classList.remove('open');
     });
 
-    prices.forEach((priceEl) => {
-      const targetPrice = priceEl.dataset[newPeriod];
-      animatePrice(priceEl, parseInt(priceEl.textContent), parseInt(targetPrice));
-    });
-  });
-}
-
-function animatePrice(element, from, to) {
-  const duration = 300;
-  const start = performance.now();
-
-  function update(currentTime) {
-    const elapsed = currentTime - start;
-    const progress = Math.min(elapsed / duration, 1);
-    const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
-    const current = Math.round(from + (to - from) * eased);
-    element.textContent = current;
-
-    if (progress < 1) {
-      requestAnimationFrame(update);
+    // Toggle current
+    if (!isOpen) {
+      item.classList.add('open');
     }
-  }
-
-  requestAnimationFrame(update);
-}
+  });
+});
 
 // ===== Smooth Scroll for Nav Links =====
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -142,8 +119,42 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
       // Close mobile menu if open
       if (window.innerWidth <= 768) {
         navLinks.style.display = '';
-        navActions.style.display = '';
+        if (navActions) navActions.style.display = '';
       }
     }
   });
 });
+
+// ===== Subscribe Form =====
+const subscribeBtn = document.getElementById('subscribe-btn');
+const emailInput = document.getElementById('email-input');
+
+if (subscribeBtn && emailInput) {
+  subscribeBtn.addEventListener('click', () => {
+    const email = emailInput.value.trim();
+    if (!email || !email.includes('@')) {
+      emailInput.style.borderColor = '#ef4444';
+      emailInput.setAttribute('placeholder', '올바른 이메일 주소를 입력하세요');
+      setTimeout(() => {
+        emailInput.style.borderColor = '';
+        emailInput.setAttribute('placeholder', '이메일 주소를 입력하세요');
+      }, 2000);
+      return;
+    }
+
+    // Success feedback
+    subscribeBtn.textContent = '구독 완료!';
+    subscribeBtn.style.background = '#22c55e';
+    emailInput.value = '';
+    setTimeout(() => {
+      subscribeBtn.innerHTML = '무료로 구독하기 <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+      subscribeBtn.style.background = '';
+    }, 3000);
+  });
+
+  emailInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      subscribeBtn.click();
+    }
+  });
+}
