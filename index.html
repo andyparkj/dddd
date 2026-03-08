@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flux - Modern SaaS Platform</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="logo">
+        <div class="logo-icon"></div>
+        <span>Flux</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how-it-works">How it works</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="#" class="btn-text">Log in</a>
+        <a href="#" class="btn-primary btn-sm">Get Started</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge animate-on-scroll">
+        <span class="badge-dot"></span>
+        Now available for teams of all sizes
+      </div>
+      <h1 class="hero-title animate-on-scroll">
+        Build products<br>
+        <span class="gradient-text">10x faster</span> with AI
+      </h1>
+      <p class="hero-subtitle animate-on-scroll">
+        Flux streamlines your workflow with intelligent automation,
+        real-time collaboration, and powerful analytics — all in one beautiful platform.
+      </p>
+      <div class="hero-cta animate-on-scroll">
+        <a href="#" class="btn-primary btn-lg">
+          Start for free
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <a href="#" class="btn-secondary btn-lg">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <polygon points="6,3 14,8 6,13" fill="currentColor"/>
+          </svg>
+          Watch demo
+        </a>
+      </div>
+      <div class="hero-image animate-on-scroll">
+        <div class="browser-frame">
+          <div class="browser-dots">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="browser-content">
+            <div class="dashboard-mock">
+              <div class="mock-sidebar">
+                <div class="mock-nav-item active"></div>
+                <div class="mock-nav-item"></div>
+                <div class="mock-nav-item"></div>
+                <div class="mock-nav-item"></div>
+                <div class="mock-nav-item"></div>
+              </div>
+              <div class="mock-main">
+                <div class="mock-header">
+                  <div class="mock-title-bar"></div>
+                  <div class="mock-actions">
+                    <div class="mock-btn"></div>
+                    <div class="mock-btn primary"></div>
+                  </div>
+                </div>
+                <div class="mock-cards">
+                  <div class="mock-card">
+                    <div class="mock-card-label"></div>
+                    <div class="mock-card-value"></div>
+                    <div class="mock-card-chart up"></div>
+                  </div>
+                  <div class="mock-card">
+                    <div class="mock-card-label"></div>
+                    <div class="mock-card-value"></div>
+                    <div class="mock-card-chart up"></div>
+                  </div>
+                  <div class="mock-card">
+                    <div class="mock-card-label"></div>
+                    <div class="mock-card-value"></div>
+                    <div class="mock-card-chart down"></div>
+                  </div>
+                </div>
+                <div class="mock-chart-area">
+                  <svg viewBox="0 0 400 120" class="mock-line-chart">
+                    <defs>
+                      <linearGradient id="chartGradient" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#6366f1" stop-opacity="0.3"/>
+                        <stop offset="100%" stop-color="#6366f1" stop-opacity="0"/>
+                      </linearGradient>
+                    </defs>
+                    <path d="M0,100 C50,90 80,60 120,55 C160,50 200,70 240,40 C280,10 320,25 360,15 L400,10 L400,120 L0,120Z" fill="url(#chartGradient)"/>
+                    <path d="M0,100 C50,90 80,60 120,55 C160,50 200,70 240,40 C280,10 320,25 360,15 L400,10" fill="none" stroke="#6366f1" stroke-width="2.5"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-logos animate-on-scroll">
+        <p>Trusted by teams at</p>
+        <div class="logo-grid">
+          <div class="company-logo">Vercel</div>
+          <div class="company-logo">Stripe</div>
+          <div class="company-logo">Linear</div>
+          <div class="company-logo">Notion</div>
+          <div class="company-logo">Figma</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="section-tag">Features</span>
+        <h2 class="section-title">Everything you need<br>to ship faster</h2>
+        <p class="section-subtitle">
+          Powerful features designed for modern teams who want to move fast without breaking things.
+        </p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card animate-on-scroll">
+          <div class="feature-icon" style="--accent: #6366f1">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Lightning Fast</h3>
+          <p>Built on cutting-edge infrastructure for sub-millisecond response times globally.</p>
+        </div>
+        <div class="feature-card animate-on-scroll">
+          <div class="feature-icon" style="--accent: #8b5cf6">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="7" height="7" rx="1"/>
+              <rect x="14" y="3" width="7" height="7" rx="1"/>
+              <rect x="3" y="14" width="7" height="7" rx="1"/>
+              <rect x="14" y="14" width="7" height="7" rx="1"/>
+            </svg>
+          </div>
+          <h3>Modular Design</h3>
+          <p>Pick and choose the components you need. Everything works together seamlessly.</p>
+        </div>
+        <div class="feature-card animate-on-scroll">
+          <div class="feature-icon" style="--accent: #ec4899">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <h3>Enterprise Security</h3>
+          <p>SOC 2 compliant with end-to-end encryption and advanced access controls.</p>
+        </div>
+        <div class="feature-card animate-on-scroll">
+          <div class="feature-icon" style="--accent: #14b8a6">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <h3>Team Collaboration</h3>
+          <p>Real-time multiplayer editing with presence indicators and inline comments.</p>
+        </div>
+        <div class="feature-card animate-on-scroll">
+          <div class="feature-icon" style="--accent: #f59e0b">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="3"/>
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+            </svg>
+          </div>
+          <h3>Custom Workflows</h3>
+          <p>Automate repetitive tasks with our visual workflow builder. No code required.</p>
+        </div>
+        <div class="feature-card animate-on-scroll">
+          <div class="feature-icon" style="--accent: #06b6d4">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+            </svg>
+          </div>
+          <h3>Analytics & Insights</h3>
+          <p>Track every metric that matters with beautiful dashboards and smart alerts.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="section-tag">How it works</span>
+        <h2 class="section-title">Get started in<br>three simple steps</h2>
+      </div>
+      <div class="steps">
+        <div class="step animate-on-scroll">
+          <div class="step-number">01</div>
+          <div class="step-content">
+            <h3>Connect your tools</h3>
+            <p>Integrate with your existing stack in minutes. We support 200+ integrations out of the box.</p>
+          </div>
+          <div class="step-visual">
+            <div class="integration-grid">
+              <div class="integration-icon"></div>
+              <div class="integration-icon"></div>
+              <div class="integration-icon"></div>
+              <div class="integration-icon"></div>
+              <div class="integration-icon"></div>
+              <div class="integration-icon"></div>
+              <div class="integration-icon center-icon"></div>
+              <div class="integration-line"></div>
+            </div>
+          </div>
+        </div>
+        <div class="step animate-on-scroll">
+          <div class="step-number">02</div>
+          <div class="step-content">
+            <h3>Set up your workflows</h3>
+            <p>Use our drag-and-drop builder to create custom workflows that match how your team works.</p>
+          </div>
+          <div class="step-visual">
+            <div class="workflow-mock">
+              <div class="workflow-node trigger">Trigger</div>
+              <div class="workflow-arrow"></div>
+              <div class="workflow-node action">Action</div>
+              <div class="workflow-arrow"></div>
+              <div class="workflow-node result">Result</div>
+            </div>
+          </div>
+        </div>
+        <div class="step animate-on-scroll">
+          <div class="step-number">03</div>
+          <div class="step-content">
+            <h3>Ship with confidence</h3>
+            <p>Deploy changes safely with built-in testing, staging environments, and instant rollbacks.</p>
+          </div>
+          <div class="step-visual">
+            <div class="deploy-mock">
+              <div class="deploy-status">
+                <div class="deploy-check">&#10003;</div>
+                <span>All checks passed</span>
+              </div>
+              <div class="deploy-bar">
+                <div class="deploy-progress"></div>
+              </div>
+              <div class="deploy-label">Deployed to production</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="section-tag">Pricing</span>
+        <h2 class="section-title">Simple, transparent<br>pricing</h2>
+        <p class="section-subtitle">No hidden fees. No surprise charges. Cancel anytime.</p>
+      </div>
+      <div class="pricing-toggle animate-on-scroll">
+        <span class="toggle-label active" data-period="monthly">Monthly</span>
+        <button class="toggle-switch" data-active="monthly">
+          <span class="toggle-knob"></span>
+        </button>
+        <span class="toggle-label" data-period="yearly">Yearly <span class="save-badge">Save 20%</span></span>
+      </div>
+      <div class="pricing-grid">
+        <div class="pricing-card animate-on-scroll">
+          <div class="pricing-header">
+            <h3>Starter</h3>
+            <p>Perfect for individuals and small projects</p>
+          </div>
+          <div class="pricing-amount">
+            <span class="currency">$</span>
+            <span class="price" data-monthly="0" data-yearly="0">0</span>
+            <span class="period">/month</span>
+          </div>
+          <ul class="pricing-features">
+            <li><span class="check">&#10003;</span> Up to 3 projects</li>
+            <li><span class="check">&#10003;</span> Basic analytics</li>
+            <li><span class="check">&#10003;</span> 1 GB storage</li>
+            <li><span class="check">&#10003;</span> Community support</li>
+          </ul>
+          <a href="#" class="btn-secondary btn-block">Get started free</a>
+        </div>
+        <div class="pricing-card popular animate-on-scroll">
+          <div class="popular-badge">Most popular</div>
+          <div class="pricing-header">
+            <h3>Pro</h3>
+            <p>For growing teams that need more power</p>
+          </div>
+          <div class="pricing-amount">
+            <span class="currency">$</span>
+            <span class="price" data-monthly="29" data-yearly="23">29</span>
+            <span class="period">/month</span>
+          </div>
+          <ul class="pricing-features">
+            <li><span class="check">&#10003;</span> Unlimited projects</li>
+            <li><span class="check">&#10003;</span> Advanced analytics</li>
+            <li><span class="check">&#10003;</span> 100 GB storage</li>
+            <li><span class="check">&#10003;</span> Priority support</li>
+            <li><span class="check">&#10003;</span> Custom workflows</li>
+            <li><span class="check">&#10003;</span> API access</li>
+          </ul>
+          <a href="#" class="btn-primary btn-block">Start free trial</a>
+        </div>
+        <div class="pricing-card animate-on-scroll">
+          <div class="pricing-header">
+            <h3>Enterprise</h3>
+            <p>For large organizations with advanced needs</p>
+          </div>
+          <div class="pricing-amount">
+            <span class="currency">$</span>
+            <span class="price" data-monthly="99" data-yearly="79">99</span>
+            <span class="period">/month</span>
+          </div>
+          <ul class="pricing-features">
+            <li><span class="check">&#10003;</span> Everything in Pro</li>
+            <li><span class="check">&#10003;</span> Unlimited storage</li>
+            <li><span class="check">&#10003;</span> SSO & SAML</li>
+            <li><span class="check">&#10003;</span> Dedicated support</li>
+            <li><span class="check">&#10003;</span> Custom contracts</li>
+            <li><span class="check">&#10003;</span> SLA guarantee</li>
+          </ul>
+          <a href="#" class="btn-secondary btn-block">Contact sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="section-tag">Testimonials</span>
+        <h2 class="section-title">Loved by thousands<br>of teams worldwide</h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card animate-on-scroll">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>"Flux has completely transformed how our team collaborates. We shipped our last product 3x faster than before."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="--hue: 250"></div>
+            <div>
+              <strong>Sarah Chen</strong>
+              <span>CTO at TechFlow</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card animate-on-scroll">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>"The analytics alone are worth the price. We finally have visibility into what matters most for our business."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="--hue: 180"></div>
+            <div>
+              <strong>Marcus Johnson</strong>
+              <span>Head of Product at ScaleUp</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card animate-on-scroll">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>"We evaluated dozens of tools and Flux was the clear winner. The integrations and workflow automation saved us hundreds of hours."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="--hue: 320"></div>
+            <div>
+              <strong>Emily Rodriguez</strong>
+              <span>Engineering Lead at Craft</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta">
+    <div class="container">
+      <div class="cta-card animate-on-scroll">
+        <h2>Ready to build<br><span class="gradient-text">something amazing?</span></h2>
+        <p>Join 10,000+ teams already using Flux to ship products faster.</p>
+        <div class="cta-actions">
+          <a href="#" class="btn-primary btn-lg">
+            Start for free
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="#" class="btn-text">Talk to sales &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <div class="logo-icon"></div>
+            <span>Flux</span>
+          </a>
+          <p>Build products faster with intelligent automation and real-time collaboration.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Integrations</a></li>
+            <li><a href="#">Changelog</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Security</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Flux. All rights reserved.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Twitter">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" aria-label="GitHub">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
