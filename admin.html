@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>WEBDOT 문의 관리자</title>
+  <style>
+    body{font-family:system-ui,sans-serif;background:#0b1020;color:#fff;margin:0;padding:24px}
+    .box{max-width:980px;margin:0 auto;background:#121b35;border:1px solid #31406d;border-radius:12px;padding:16px}
+    input,button{padding:10px;border-radius:8px;border:1px solid #3a4b7d;background:#0e1731;color:#fff}
+    button{background:#4f8dff;cursor:pointer}
+    table{width:100%;border-collapse:collapse;margin-top:12px;font-size:14px}
+    th,td{border-bottom:1px solid #2a3862;padding:8px;vertical-align:top;text-align:left}
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>문의 관리자 조회</h1>
+    <p>관리자 토큰 입력 후 조회하세요.</p>
+    <input id="token" placeholder="x-admin-token" style="width:320px" />
+    <button id="load">조회</button>
+    <p id="status"></p>
+    <table>
+      <thead><tr><th>시간</th><th>이름</th><th>회사</th><th>연락처</th><th>이메일</th><th>내용</th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+  <script>
+    const btn=document.getElementById('load'); const rows=document.getElementById('rows'); const status=document.getElementById('status');
+    btn.onclick=async()=>{
+      rows.innerHTML=''; status.textContent='불러오는 중...';
+      const token=document.getElementById('token').value.trim();
+      const res=await fetch('/api/inquiries',{headers:{'x-admin-token':token}});
+      const data=await res.json();
+      if(!res.ok){status.textContent=data.message||'실패';return;}
+      status.textContent=`총 ${data.items.length}건`;
+      rows.innerHTML=data.items.map(i=>`<tr><td>${i.createdAt}</td><td>${i.name}</td><td>${i.company}</td><td>${i.phone}</td><td>${i.email}</td><td>${i.message}</td></tr>`).join('');
+    }
+  </script>
+</body>
+</html>
