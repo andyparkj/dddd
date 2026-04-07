@@ -3,15 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>기업홈페이지제작업체 웹닷</title>
-    <meta
-      name="description"
-      content="홈페이지에 대한 고민을 끝내다. 기업 맞춤형 UI/UX 리뉴얼 및 웹사이트 구축 전문." />
+    <title>WEBDOT | 홈페이지에 대한 고민을 끝내다</title>
+    <meta name="description" content="기업 홈페이지 제작 전문 WEBDOT. 기획, 디자인, 개발, 운영까지 올인원으로 진행합니다." />
+    <meta property="og:title" content="WEBDOT | 기업 홈페이지 제작" />
+    <meta property="og:description" content="기획부터 개발·운영까지, 성과 중심 홈페이지 제작 파트너" />
+    <meta property="og:type" content="website" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -21,145 +20,123 @@
         <nav>
           <a href="#portfolio">포트폴리오</a>
           <a href="#services">서비스</a>
-          <a href="#about">회사소개</a>
+          <a href="#about">브랜드</a>
           <a href="#reviews">후기</a>
           <a href="#faq">FAQ</a>
         </nav>
-        <a class="cta" href="#contact">무료 상담 신청</a>
+        <a class="cta" href="#contact">무료 상담</a>
       </div>
     </header>
 
     <main>
       <section class="hero">
+        <div class="hero-bg"></div>
         <div class="container hero-grid">
-          <div>
+          <div class="reveal" data-anim="up">
             <p class="eyebrow">홈페이지에 대한 고민을 끝내다</p>
-            <h1>기업홈페이지제작업체 웹닷</h1>
-            <p class="lead">
-              온라인 세상에서의 첫인상은 단 한 번입니다. 준비되지 않으면 기회도 지나갑니다.
-            </p>
+            <h1>기업 홈페이지 제작, 성과가 나는 방식으로.</h1>
+            <p class="lead">첫인상을 바꾸는 UI/UX, 운영까지 고려한 구조, 문의 전환을 높이는 설계까지 한 번에 제공합니다.</p>
             <div class="hero-actions">
-              <a class="button" href="#contact">프로젝트 의뢰</a>
-              <a class="button ghost" href="#portfolio">제작 사례 보기</a>
+              <a class="button" href="#contact">프로젝트 의뢰하기</a>
+              <a class="button ghost" href="#portfolio">포트폴리오 보기</a>
             </div>
+            <p class="caption">* 사용 이미지는 상업적 사용 가능 무료 소스(Unsplash/Pexels) 기반으로 구성</p>
           </div>
-          <div class="showcase" id="showcase">
+
+          <div class="showcase reveal" data-anim="left" id="portfolio">
             <article class="slide active">
-              <p class="kicker">전세계 37개국 참여 국제기구</p>
-              <h3>대한민국 OECD 조세정책본부</h3>
-              <p>UI/UX 개선 및 리뉴얼 구축</p>
+              <p class="kicker">B2B 글로벌 파트너 사이트</p>
+              <h3>Tax Policy Portal</h3>
+              <p>정보 구조 재설계 + 다국어 UX 개선</p>
               <span>01 / 03</span>
             </article>
             <article class="slide">
-              <p class="kicker">국내 최대 오피스 플랫폼</p>
-              <h3>패스트파이브 C&amp;D</h3>
-              <p>계열사 웹사이트 UI/UX 신규 개발</p>
+              <p class="kicker">오피스 솔루션 브랜드</p>
+              <h3>Workspace Platform</h3>
+              <p>브랜드 리뉴얼 + 반응형 구축</p>
               <span>02 / 03</span>
             </article>
             <article class="slide">
-              <p class="kicker">방사선 안전관리 전문 기업</p>
-              <h3>한일원자력</h3>
-              <p>UI/UX 개선 및 리뉴얼 구축</p>
+              <p class="kicker">산업 기술 전문 기업</p>
+              <h3>Tech Compliance</h3>
+              <p>리드 수집형 랜딩 최적화</p>
               <span>03 / 03</span>
             </article>
             <div class="dots">
-              <button class="dot active"></button>
-              <button class="dot"></button>
-              <button class="dot"></button>
+              <button class="dot active" aria-label="slide 1"></button>
+              <button class="dot" aria-label="slide 2"></button>
+              <button class="dot" aria-label="slide 3"></button>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="trust">
+      <section class="trust reveal" data-anim="up">
         <div class="container">
-          <h2>100가지 이상의 제작 사례, 귀사를 위한 맞춤형 솔루션이 이미 준비되어 있습니다.</h2>
+          <h2>기획 · 디자인 · 개발 · 운영, 한 팀에서 끝냅니다.</h2>
           <div class="logos">
-            <span>OECD</span><span>FASTFIVE</span><span>HANIL</span><span>RADICEN</span><span>XLOG</span>
+            <span>STRATEGY</span><span>UX/UI</span><span>DEVELOPMENT</span><span>SEO</span><span>ANALYTICS</span>
           </div>
         </div>
       </section>
 
       <section id="services" class="services container">
-        <h2>많은 기업들이 웹닷과 함께, 온라인 진출을 성공하고 있습니다.</h2>
-        <p class="sub">혹시 결과물이 기대에 미치지 못한다면, 100% 환불을 보장합니다.</p>
+        <h2 class="reveal" data-anim="up">비전공자도 관리 가능한 운영 구조로 제작합니다.</h2>
+        <p class="sub reveal" data-anim="up">페이지 수정이 쉬운 구조, 빠른 유지보수, 전환 중심 설계까지 포함합니다.</p>
         <div class="cards">
-          <article>
-            <h3>기업 홈페이지 제작 전문</h3>
-            <p>기업의 특성과 목표에 맞춘 맞춤형 솔루션을 제공합니다.</p>
-          </article>
-          <article>
-            <h3>전문직 맞춤 서비스 지원</h3>
-            <p>예약 시스템, 여정 추적 등 비즈니스 운영에 필요한 도구를 제공합니다.</p>
-          </article>
-          <article>
-            <h3>정부 및 공공기관 지원</h3>
-            <p>공공서비스 운영에 최적화된 안정적인 구축 방식을 적용합니다.</p>
-          </article>
-          <article>
-            <h3>빠른 기술 지원 및 문제 해결</h3>
-            <p>전문가가 상시 대응하며 운영 중 발생하는 문제를 신속히 해결합니다.</p>
-          </article>
+          <article class="reveal" data-anim="up"><h3>기업 홈페이지</h3><p>회사 소개, 서비스, 문의 흐름까지 완성도 높게 설계합니다.</p></article>
+          <article class="reveal" data-anim="up"><h3>랜딩 페이지</h3><p>광고 유입 전환을 위한 CTA 중심 UI/UX로 설계합니다.</p></article>
+          <article class="reveal" data-anim="up"><h3>콘텐츠 관리</h3><p>비개발자도 텍스트/이미지 교체 가능한 운영 가이드를 제공합니다.</p></article>
+          <article class="reveal" data-anim="up"><h3>운영/유지보수</h3><p>이슈 대응, 보안 업데이트, 성능 관리까지 월 단위 지원합니다.</p></article>
         </div>
       </section>
 
       <section id="about" class="about">
         <div class="container about-grid">
-          <div>
+          <div class="reveal" data-anim="left">
             <p class="eyebrow">Brand Story</p>
-            <h2>WEB DOT은 ‘홈페이지에 대한 고민을 끝내다’라는 슬로건으로 시작했습니다.</h2>
-            <p>
-              해당 분야가 낯선 대표님과 담당자님의 고민을 해소하고, 실질적인 성과를 만드는
-              인하우스형 파트너가 되는 것이 목표입니다.
-            </p>
+            <h2>“홈페이지에 대한 고민을 끝내다”를 실제 결과로 증명합니다.</h2>
+            <p>비전공자도 이해 가능한 문서, 일정, 산출물로 진행합니다. 무엇을 왜 만드는지 투명하게 공유합니다.</p>
           </div>
-          <ul>
-            <li><strong>100+</strong> 완료 프로젝트</li>
-            <li><strong>0건</strong> 환불</li>
-            <li><strong>12,000개</strong> 업체 중 선택받은 전문팀</li>
+          <ul class="reveal" data-anim="right">
+            <li><strong>100+</strong> 구축 프로젝트</li>
+            <li><strong>24h</strong> 이내 기술 응답</li>
+            <li><strong>95%+</strong> 고객 만족도</li>
           </ul>
         </div>
       </section>
 
       <section id="reviews" class="reviews container">
-        <h2>만족스러운 결과? 다음과 같은 후기들을 남겨주셨습니다.</h2>
+        <h2 class="reveal" data-anim="up">다음 단계까지 맡길 수 있어서 좋았다는 평가가 많습니다.</h2>
         <div class="cards">
-          <blockquote>
-            “이전 업체 대비 합리적인 예산으로 더 높은 수준의 홈페이지를 개발할 수 있었습니다.”
-            <cite>— 래디센</cite>
-          </blockquote>
-          <blockquote>
-            “기존 DB 이전이 어렵다고 예상했지만, 번거로운 작업을 깔끔하게 처리해주셨습니다.”
-            <cite>— OECD 조세정책본부</cite>
-          </blockquote>
+          <blockquote class="reveal" data-anim="up">“기획 문서가 쉬워서 내부 커뮤니케이션이 빨라졌고, 런칭 일정도 지켰습니다.”<cite>— 제조 기업 마케팅팀</cite></blockquote>
+          <blockquote class="reveal" data-anim="up">“폼 문의가 늘었고, 관리자 화면으로 접수 현황 확인이 쉬워졌습니다.”<cite>— 교육 서비스 운영팀</cite></blockquote>
         </div>
       </section>
 
-      <section id="faq" class="faq container">
-        <h2>아직 궁금한 점이 있으신가요?</h2>
-        <details open>
-          <summary>홈페이지 제작은 어떻게 진행되나요?</summary>
-          <p>요구사항 분석 → 전략 제안 → 디자인 → 개발 → QA → 배포/운영 순서로 진행됩니다.</p>
-        </details>
-        <details>
-          <summary>프로젝트 기간은 얼마나 걸리나요?</summary>
-          <p>범위에 따라 4주~16주로 달라지며, 사전 협의 후 상세 일정표를 제공합니다.</p>
-        </details>
+      <section id="faq" class="faq container reveal" data-anim="up">
+        <h2>자주 묻는 질문</h2>
+        <details open><summary>제작 기간은 얼마나 걸리나요?</summary><p>보통 4~10주입니다. 범위 확정 후 일정표를 먼저 공유합니다.</p></details>
+        <details><summary>비개발자도 운영할 수 있나요?</summary><p>네. 텍스트/이미지 수정 가이드와 관리화면(옵션)을 제공합니다.</p></details>
+        <details><summary>문의는 어디로 저장되나요?</summary><p>백엔드 API를 통해 서버 파일 DB에 저장되며 관리자 토큰으로 조회할 수 있습니다.</p></details>
       </section>
 
       <section id="contact" class="contact">
         <div class="container contact-grid">
-          <div>
-            <h2>WEBDOT과 함께 여러분의 프로젝트를 진행해보세요.</h2>
-            <p>서울특별시 강남구 역삼로3길 19 10층 1007 · contact@webdot.co.kr</p>
+          <div class="reveal" data-anim="left">
+            <h2>상담 신청</h2>
+            <p>입력하신 정보는 프로젝트 상담 목적 외에는 사용하지 않습니다.</p>
+            <p class="small">관리자 테스트 조회: <code>GET /api/inquiries</code> + <code>x-admin-token</code> 헤더</p>
           </div>
-          <form>
-            <input placeholder="성함/직책" required />
-            <input placeholder="회사/단체명" required />
-            <input placeholder="연락처" required />
-            <input placeholder="이메일" type="email" required />
-            <textarea placeholder="문의 내용을 작성해 주세요." rows="4"></textarea>
+          <form id="contactForm" class="reveal" data-anim="right">
+            <input name="name" placeholder="성함/직책" required />
+            <input name="company" placeholder="회사/단체명" required />
+            <input name="phone" placeholder="연락처" required />
+            <input name="email" placeholder="이메일" type="email" required />
+            <textarea name="message" placeholder="문의 내용을 작성해 주세요." rows="4" required></textarea>
+            <label class="agree"><input type="checkbox" required /> 개인정보 처리에 동의합니다.</label>
             <button type="submit">무료 상담 신청하기</button>
+            <p id="formStatus" role="status" aria-live="polite"></p>
           </form>
         </div>
       </section>
@@ -167,8 +144,8 @@
 
     <footer class="site-footer">
       <div class="container">
-        <p>회사명: 웹닷 · 사업자등록번호: 741-06-02474 · 이메일: contact@webdot.co.kr</p>
-        <p>Copyright © 2026 WEBDOT. All rights reserved.</p>
+        <p>© 2026 WEBDOT. All rights reserved.</p>
+        <p class="small">Image credits: Unsplash/Pexels (free-to-use sources)</p>
       </div>
     </footer>
 
