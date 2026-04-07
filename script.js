@@ -1,10 +1,9 @@
-// 1) Hero slider
 const slides = [...document.querySelectorAll('.slide')];
 const dots = [...document.querySelectorAll('.dot')];
 let idx = 0;
-let timer = null;
+let timer;
 
-function renderSlide(next) {
+function moveSlide(next) {
   slides[idx].classList.remove('active');
   dots[idx].classList.remove('active');
   idx = next;
@@ -13,65 +12,70 @@ function renderSlide(next) {
 }
 
 function startSlider() {
-  if (timer) clearInterval(timer);
-  timer = setInterval(() => renderSlide((idx + 1) % slides.length), 3500);
+  clearInterval(timer);
+  timer = setInterval(() => moveSlide((idx + 1) % slides.length), 3400);
 }
 
-dots.forEach((dot, i) => {
-  dot.addEventListener('click', () => {
-    renderSlide(i);
-    startSlider();
-  });
-});
+dots.forEach((dot, i) => dot.addEventListener('click', () => {
+  moveSlide(i);
+  startSlider();
+}));
 startSlider();
 
-// 2) Scroll reveal animation
 const revealEls = [...document.querySelectorAll('.reveal')];
-const observer = new IntersectionObserver(
-  entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('show');
-      }
-    });
-  },
-  { threshold: 0.15 }
-);
-revealEls.forEach(el => observer.observe(el));
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) entry.target.classList.add('show');
+  });
+}, { threshold: 0.15 });
+revealEls.forEach((el) => observer.observe(el));
 
-// 3) Contact form to backend API
+const countEls = [...document.querySelectorAll('.count')];
+const countObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) return;
+    const el = entry.target;
+    const target = Number(el.dataset.target || 0);
+    let current = 0;
+    const step = Math.max(1, Math.floor(target / 28));
+    const tick = setInterval(() => {
+      current += step;
+      if (current >= target) {
+        current = target;
+        clearInterval(tick);
+      }
+      el.textContent = current;
+    }, 28);
+    countObserver.unobserve(el);
+  });
+}, { threshold: 0.5 });
+countEls.forEach((el) => countObserver.observe(el));
+
 const form = document.querySelector('#contactForm');
 const statusEl = document.querySelector('#formStatus');
 
-form?.addEventListener('submit', async e => {
+form?.addEventListener('submit', async (e) => {
   e.preventDefault();
   statusEl.textContent = '전송 중입니다...';
 
-  const formData = new FormData(form);
-  const payload = {
-    name: formData.get('name'),
-    company: formData.get('company'),
-    phone: formData.get('phone'),
-    email: formData.get('email'),
-    message: formData.get('message'),
-  };
+  const payload = Object.fromEntries(new FormData(form).entries());
 
   try {
-    const res = await fetch('/api/inquiries', {
+    const response = await fetch('/api/inquiries', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),
     });
+    const data = await response.json();
 
-    const data = await res.json();
-    if (!res.ok) {
-      statusEl.textContent = data.message || '전송에 실패했습니다. 다시 시도해주세요.';
+    if (!response.ok) {
+      statusEl.textContent = data.message || '전송 실패. 다시 시도해주세요.';
       return;
     }
 
-    statusEl.textContent = '문의가 정상 접수되었습니다. 빠르게 연락드릴게요!';
+    statusEl.textContent = '문의가 접수되었습니다. 빠르게 연락드릴게요!';
     form.reset();
   } catch (error) {
-    statusEl.textContent = '네트워크 오류가 발생했습니다. 잠시 후 다시 시도해주세요.';
+    statusEl.textContent = '네트워크 오류가 발생했습니다.';
   }
 });
